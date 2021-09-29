@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Muthita Online</title>
+    <link rel="stylesheet" href="css/intro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="index.html" class="brand" style="text-decoration: none;">Muthita</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="360.html">360 Tour</a>
+          <a href="#">Play Now</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video autoplay muted loop playsinline class="video-slide active">
+        <source src="video/BG_Website01.webm" type="video/webm">
+        <source src="video/BG_Website_IP.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline class="video-slide">
+        <source src="video/BG_Website02_1.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline class="video-slide">
+        <source src="video/BG_Website03.mp4" type="video/mp4">
+      </video>
+
+      <div class="content active">
+        <h1>What is<br><span>Muthita Online</span></h1>
+        <p>อะไรคือ มุทิตาออนไลน์ ที่มาของการจัดนิทรรศการ จุดประสงค์ของนิทรรศการ</p>
+        <a href="about.html">ดูเพิ่มเติม</a>
+      </div>
+      <div class="content">
+        <h1>Experience<br><span>360 Tour</span></h1>
+        <p>โลกในจินตนาการและความก้าวล้ำทางเทคโนโลยีมารวมกัน จึงเกิดเป็นประสบการณ์ใหม่ ที่มองได้รอบตัว</p>
+        <a href="360.html">ดูเพิ่มเติม</a>
+      </div>
+      <div class="content">
+        <h1>Let's Tour<br><span>Online Exhibition</span></h1>
+        <p>พร้อมจะท่องโลก 360 บนอุปกรณ์ของคุณด้วยปลายนิ้วแล้วรึยัง</p>
+        <a href="#">เข้าสู่โลกเสมือน</a>
+      </div>
+      <div class="media-icons">
+        <a href="https://m.facebook.com/muditaphra/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-line"></i></a>
+        <a href="https://m.youtube.com/channel/UCj0SV96zo0YqKPyRdrzsNqA"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+      <!--<div class="bottombar"></div>-->
+    </section>
+
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+    
+
+  </body>
+</html>
